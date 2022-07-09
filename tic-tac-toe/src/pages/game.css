@@ -1,0 +1,79 @@
+body{
+    background-color: #fff;
+}
+.board{
+    background-color: red;
+    height: 300px;
+    width: 300px;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    margin:5rem auto;
+    box-shadow: 1px 1px 15px #ccc;
+    user-select: none;
+    cursor: pointer;
+}
+h1{
+    color: black;
+}
+.board_tiles{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border: 5px double #ccc;
+    color: #000;
+    font-size: 4rem;
+    font-weight:bold;
+    font-family:'Courier New', Courier, monospace
+}
+.board_tiles:active{
+    background-color: #fff;
+}
+.btn{
+    padding:10px 20px;
+    box-shadow: 0px 10px 20px rgba(243, 51, 51, 0.19),
+                0px 6px 6px rgba(153, 12, 12, 0.23);
+    color :violet;
+    cursor: pointer;
+    position: relative;
+    font-size: 28px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    transition: all 1s;
+    border: none;
+    background-color: #fff;
+}
+.btn:hover{
+    box-shadow: 0px 0px 50px red;
+}
+.btn::before,.btn::after{
+    content:"";
+    width:10px;
+    height:10px;
+    position: absolute;
+    border: 0px solid white;
+    transition: all 1s;
+}
+.btn::before{
+    bottom:-1px;
+    right: -1px;
+    border-top: 5px solid red;
+    border-left : 5px solid red;
+    transform: rotate(180deg);
+}
+.btn::after{
+    top:-1px;
+    left: -1px;
+    border-top: 5px solid red;
+    border-left : 5px solid red;
+    /* transform: rotate(180deg); */
+}
+.btn:hover{
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+}
+.btn:hover:after,.btn:hover:before{
+    width: 110%;
+    height:110%;
+}
